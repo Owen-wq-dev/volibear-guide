@@ -206,6 +206,9 @@
     .card-actions button { padding: 4px 10px; font-size: 11.5px; border-color: rgba(200, 155, 60, 0.3); }
     .card-actions .btn-del { border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
 
+    /* =======================================
+       상성 티어표 (승률 낮을수록 상위 티어 배치)
+    ======================================= */
     #tier-view-container {
       max-width: 1000px; margin: 0 auto; display: none; flex-direction: column; gap: 10px;
     }
@@ -220,7 +223,7 @@
     .tier-a { background: #f97316; }
     .tier-b { background: #eab308; color: #111; text-shadow: none; }
     .tier-c { background: #10b981; }
-    .tier-d { background: #6366f1; }
+    .tier-d { background: #3b82f6; }
     .tier-unranked { background: #475569; }
 
     .tier-champs-wrap {
@@ -237,135 +240,47 @@
       position: absolute; bottom: 0; left: 0; right: 0; background: rgba(3, 10, 19, 0.88); font-size: 10px; text-align: center; font-weight: bold; padding: 1px 0; color: #f0e6d2;
     }
 
-    /* =======================================
-       볼리베어 자체 정보 뷰어 스타일
-    ======================================= */
+    /* 볼리베어 자체 정보 뷰어 */
     #volibear-info-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: none;
-      flex-direction: column;
-      gap: 18px;
+      max-width: 1000px; margin: 0 auto; display: none; flex-direction: column; gap: 18px;
     }
     .voli-hero {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-gold);
-      padding: 30px 24px;
-      background-size: cover;
-      background-position: center 25%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-gold); padding: 30px 24px; background-size: cover; background-position: center 25%; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
     .voli-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(90deg, rgba(3,10,19,0.95) 0%, rgba(3,10,19,0.7) 50%, rgba(3,10,19,0.4) 100%);
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, rgba(3,10,19,0.95) 0%, rgba(3,10,19,0.7) 50%, rgba(3,10,19,0.4) 100%);
     }
     .voli-hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 600px;
+      position: relative; z-index: 2; display: flex; flex-direction: column; gap: 10px; max-width: 600px;
     }
-    .voli-hero-content h2 {
-      font-size: 30px;
-      color: #fff;
-      text-shadow: 0 0 12px rgba(92, 230, 230, 0.6);
-    }
-    .voli-hero-content p {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: #cbd5e1;
-    }
+    .voli-hero-content h2 { font-size: 30px; color: #fff; text-shadow: 0 0 12px rgba(92, 230, 230, 0.6); }
+    .voli-hero-content p { font-size: 13.5px; line-height: 1.6; color: #cbd5e1; }
 
-    .voli-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
+    .voli-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
     .voli-stat-card {
-      background: #060e18;
-      border: 1px solid #1e2d42;
-      border-radius: 6px;
-      padding: 12px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      background: #060e18; border: 1px solid #1e2d42; border-radius: 6px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px;
     }
     .voli-stat-title { font-size: 11px; color: #785a28; font-weight: bold; }
     .voli-stat-num { font-size: 16px; color: #f0e6d2; font-weight: 700; }
 
     .voli-skill-block {
-      background: #060e18;
-      border: 1px solid var(--border-gold);
-      border-radius: 8px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      background: #060e18; border: 1px solid var(--border-gold); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 16px;
     }
     .voli-skill-item {
-      display: flex;
-      gap: 16px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid #1a2638;
-      border-radius: 6px;
-      padding: 12px;
-      align-items: flex-start;
+      display: flex; gap: 16px; background: rgba(255,255,255,0.02); border: 1px solid #1a2638; border-radius: 6px; padding: 12px; align-items: flex-start;
     }
     .voli-skill-item img {
-      width: 52px;
-      height: 52px;
-      border-radius: 6px;
-      border: 2px solid var(--hex-blue);
-      flex-shrink: 0;
+      width: 52px; height: 52px; border-radius: 6px; border: 2px solid var(--hex-blue); flex-shrink: 0;
     }
-    .voli-skill-body {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      flex: 1;
-    }
-    .voli-skill-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .voli-skill-body { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .voli-skill-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
     .voli-skill-name {
-      font-size: 15px;
-      font-weight: bold;
-      color: var(--hex-gold-light);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 15px; font-weight: bold; color: var(--hex-gold-light); display: flex; align-items: center; gap: 6px;
     }
-    .voli-skill-meta {
-      font-size: 12px;
-      color: #38bdf8;
-      font-weight: bold;
-    }
-    .voli-skill-desc {
-      font-size: 13px;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
+    .voli-skill-meta { font-size: 12px; color: #38bdf8; font-weight: bold; }
+    .voli-skill-desc { font-size: 13px; color: #cbd5e1; line-height: 1.6; }
     .shift-hint-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 11px;
-      color: #facc15;
-      background: rgba(250, 204, 21, 0.1);
-      border: 1px solid rgba(250, 204, 21, 0.3);
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-left: 8px;
+      display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #facc15; background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.3); padding: 2px 8px; border-radius: 4px; margin-left: 8px;
     }
 
     .modal-overlay {
@@ -540,52 +455,18 @@
     #confirmModal h2 { color: #f87171; font-size: 19px; margin-bottom: 6px; }
     #confirmModal p { color: #e2e8f0; font-size: 13.5px; line-height: 1.5; }
 
-    /* =======================================
-       롤 인게임 스타일 구체적 수치 툴팁
-    ======================================= */
     #lolTooltip {
-      position: fixed;
-      pointer-events: none;
-      z-index: 99999;
-      background: rgba(4, 11, 20, 0.98);
-      border: 1px solid var(--hex-gold);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 10px rgba(200, 155, 60, 0.3);
-      border-radius: 6px;
-      padding: 12px 14px;
-      color: #f0e6d2;
-      font-size: 12.5px;
-      display: none;
-      max-width: 320px;
-      line-height: 1.5;
-      backdrop-filter: blur(8px);
+      position: fixed; pointer-events: none; z-index: 99999; background: rgba(4, 11, 20, 0.98); border: 1px solid var(--hex-gold);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 10px rgba(200, 155, 60, 0.3); border-radius: 6px; padding: 12px 14px; color: #f0e6d2; font-size: 12.5px; display: none; max-width: 320px; line-height: 1.5; backdrop-filter: blur(8px);
     }
     #lolTooltip .tooltip-title {
-      font-weight: bold;
-      color: var(--hex-gold-light);
-      font-size: 14px;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      font-weight: bold; color: var(--hex-gold-light); font-size: 14px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;
     }
-    #lolTooltip .tooltip-desc {
-      color: #cbd5e1;
-      font-size: 12px;
-    }
+    #lolTooltip .tooltip-desc { color: #cbd5e1; font-size: 12px; }
     #lolTooltip .tooltip-detail-block {
-      margin-top: 8px;
-      padding-top: 6px;
-      border-top: 1px dashed rgba(200, 155, 60, 0.3);
-      font-size: 11.5px;
-      color: #facc15;
-      line-height: 1.4;
+      margin-top: 8px; padding-top: 6px; border-top: 1px dashed rgba(200, 155, 60, 0.3); font-size: 11.5px; color: #facc15; line-height: 1.4;
     }
-    #lolTooltip .tooltip-shift-status {
-      font-size: 10px;
-      color: #64748b;
-      margin-top: 6px;
-      text-align: right;
-    }
+    #lolTooltip .tooltip-shift-status { font-size: 10px; color: #64748b; margin-top: 6px; text-align: right; }
 
     .modal-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
   </style>
@@ -634,7 +515,6 @@
       </div>
     </div>
 
-    <!-- 볼리베어 기본 능력치 요약 -->
     <div class="voli-stats-grid">
       <div class="voli-stat-card">
         <span class="voli-stat-title">기본 체력</span>
@@ -658,7 +538,6 @@
       </div>
     </div>
 
-    <!-- 볼리베어 패시브 및 스킬셋 -->
     <div class="voli-skill-block" id="volibearSkillBlock"></div>
   </div>
 
@@ -910,9 +789,8 @@
     let currentDifficultyFilter = '전체';
     let currentMainView = 'card';
     let isShiftPressed = false;
-    let activeTooltipElement = null; // 현재 마우스가 올라간 툴팁 대상
+    let activeTooltipElement = null;
 
-    // Shift 키 감지 이벤트
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Shift' && !isShiftPressed) {
         isShiftPressed = true;
@@ -980,11 +858,11 @@
 
     const defaultData = [
       {
-        id: "Aatrox",
-        name: "아트록스",
-        difficulty: "보통",
-        wins: 4,
-        losses: 1,
+        id: "Jax",
+        name: "잭스",
+        difficulty: "매우 어려움",
+        wins: 0,
+        losses: 4,
         runePayload: {
           primaryStyleId: 8400,
           primaryStyleName: "결의",
@@ -1001,12 +879,11 @@
         },
         spells: ["SummonerFlash", "SummonerTeleport"],
         skillOrder: "W -> Q -> E",
-        coreTip: "Q 1, 2타는 몸 안쪽으로 파고들어 W 딜교. 3타 찍는 순간 내 Q 기절이나 궁(R) 저지 불가로 씹기.",
-        detailGuide: "1. 초반 1~3레벨:\n- 아트록스 Q1 끝거리에 맞지 않는 것이 핵심. 미니언 먹을 때 전진 무빙으로 Q 안쪽 범위로 파고들며 W 긁기.\n- 내 E 실드가 켜진 타이밍에만 짧은 딜교를 진행할 것.\n\n2. 6레벨 이후 타이밍:\n- 아트록스 궁 켜졌을 때 맞궁을 쓰되, 점화나 치감칼(처형인의 대검)을 먼저 구비하면 킬각 잡기 훨씬 쉬움.\n\n3. 추천 아이템:\n- 판금 장화 -> 균열 생성기 -> 얼어붙은 건틀릿 순서 추천.",
+        coreTip: "반격(E) 켜면 바로 뒤로 빼고 내 E는 잭스 착지 지점에 깔기. 반격 끝나는 즉시 Q 스턴 연계.",
+        detailGuide: "- 잭스 E 도는 동안에는 평타와 W가 전부 빗나감.\n- 반격 돌릴 때 거리 벌리고, 잭스 Q 도약으로 붙으면 내 E 쉴드로 기절 데미지 막고 반격 풀릴 때 맞딜.",
         updatedAt: "2026. 11. 1.",
         comments: [
-          { text: "판금 장화 먼저 올리면 라인전 훨씬 안정적임.", time: "11/01 14:10" },
-          { text: "아트록스 W 사슬 끌려갈 때 볼베 Q 이속으로 대각선 탈출 추천.", time: "11/01 14:15" }
+          { text: "잭스 상대로 무리한 다이브 금지", time: "11/01 15:20" }
         ]
       },
       {
@@ -1066,11 +943,11 @@
         comments: []
       },
       {
-        id: "Jax",
-        name: "잭스",
-        difficulty: "매우 어려움",
-        wins: 0,
-        losses: 4,
+        id: "Aatrox",
+        name: "아트록스",
+        difficulty: "보통",
+        wins: 4,
+        losses: 1,
         runePayload: {
           primaryStyleId: 8400,
           primaryStyleName: "결의",
@@ -1087,11 +964,12 @@
         },
         spells: ["SummonerFlash", "SummonerTeleport"],
         skillOrder: "W -> Q -> E",
-        coreTip: "반격(E) 켜면 바로 뒤로 빼고 내 E는 잭스 착지 지점에 깔기. 반격 끝나는 즉시 Q 스턴 연계.",
-        detailGuide: "- 잭스 E 도는 동안에는 평타와 W가 전부 빗나감.\n- 반격 돌릴 때 거리 벌리고, 잭스 Q 도약으로 붙으면 내 E 쉴드로 기절 데미지 막고 반격 풀릴 때 맞딜.",
+        coreTip: "Q 1, 2타는 몸 안쪽으로 파고들어 W 딜교. 3타 찍는 순간 내 Q 기절이나 궁(R) 저지 불가로 씹기.",
+        detailGuide: "1. 초반 1~3레벨:\n- 아트록스 Q1 끝거리에 맞지 않는 것이 핵심. 미니언 먹을 때 전진 무빙으로 Q 안쪽 범위로 파고들며 W 긁기.\n- 내 E 실드가 켜진 타이밍에만 짧은 딜교를 진행할 것.\n\n2. 6레벨 이후 타이밍:\n- 아트록스 궁 켜졌을 때 맞궁을 쓰되, 점화나 치감칼(처형인의 대검)을 먼저 구비하면 킬각 잡기 훨씬 쉬움.\n\n3. 추천 아이템:\n- 판금 장화 -> 균열 생성기 -> 얼어붙은 건틀릿 순서 추천.",
         updatedAt: "2026. 11. 1.",
         comments: [
-          { text: "잭스 상대로 무리한 다이브 금지", time: "11/01 15:20" }
+          { text: "판금 장화 먼저 올리면 라인전 훨씬 안정적임.", time: "11/01 14:10" },
+          { text: "아트록스 W 사슬 끌려갈 때 볼베 Q 이속으로 대각선 탈출 추천.", time: "11/01 14:15" }
         ]
       }
     ];
@@ -1188,9 +1066,6 @@
       else if (currentMainView === 'tier') renderTierView();
     }
 
-    // =======================================
-    // 뷰 전환 (카드 뷰 vs 티어표 vs 볼리베어 정보)
-    // =======================================
     function switchMainView(viewName) {
       currentMainView = viewName;
       const btnCard = document.getElementById('btnViewCard');
@@ -1226,7 +1101,6 @@
       }
     }
 
-    // 볼리베어 자체 스킬셋 렌더링
     async function renderVolibearSkills() {
       const container = document.getElementById('volibearSkillBlock');
       container.innerHTML = '<span style="color:#8391a6; font-size:12px;">볼리베어 스킬 데이터 로딩 중...</span>';
@@ -1307,16 +1181,20 @@
       });
     }
 
+    // ========================================================
+    // 티어표 뷰 (승률이 낮을수록 상위 티어 S에 위치하도록 역전)
+    // ========================================================
     function renderTierView() {
       const container = document.getElementById('tier-view-container');
       container.innerHTML = '';
 
+      // 볼리베어 승률 기준: 승률이 낮을수록(상대하기 까다로움) 상위 티어 S
       const tiers = [
-        { label: 'S', name: '꿀 매치업 (승률 65% 이상)', class: 'tier-s', min: 65, max: 100 },
-        { label: 'A', name: '우세 구도 (55% ~ 64%)', class: 'tier-a', min: 55, max: 64 },
+        { label: 'S', name: '지옥 / 닷지 권장 (승률 35% 미만)', class: 'tier-s', min: 0, max: 34 },
+        { label: 'A', name: '불리한 구도 (35% ~ 44%)', class: 'tier-a', min: 35, max: 44 },
         { label: 'B', name: '반반 손싸움 (45% ~ 54%)', class: 'tier-b', min: 45, max: 54 },
-        { label: 'C', name: '불리한 구도 (35% ~ 44%)', class: 'tier-c', min: 35, max: 44 },
-        { label: 'D', name: '지옥 / 닷지 권장 (35% 미만)', class: 'tier-d', min: 0, max: 34 },
+        { label: 'C', name: '우세 구도 (55% ~ 64%)', class: 'tier-c', min: 55, max: 64 },
+        { label: 'D', name: '꿀 매치업 (65% 이상)', class: 'tier-d', min: 65, max: 100 },
         { label: '?', name: '판수 미기록 (전적 없음)', class: 'tier-unranked', unranked: true }
       ];
 
@@ -1348,7 +1226,7 @@
               const rateStr = total > 0 ? `${Math.round(((m.wins || 0)/total)*100)}%` : '0판';
               const iconUrl = `https://ddragon.leagueoflegends.com/cdn/${CURRENT_LOL_VERSION}/img/champion/${m.id}.png`;
               return `
-                <div class="tier-champ-chip" onclick="openDetailViewer(${origIdx})" title="${m.name} (${m.wins || 0}승 ${m.losses || 0}패)">
+                <div class="tier-champ-chip" onclick="openDetailViewer(${origIdx})" title="${m.name} (${m.wins || 0}승 ${m.losses || 0}패 - 승률 ${rateStr})">
                   <img src="${iconUrl}" alt="${m.name}">
                   <div class="tier-champ-chip-badge">${rateStr}</div>
                 </div>
@@ -1526,7 +1404,7 @@
             key: ['Q', 'W', 'E', 'R'][idx],
             name: s.name,
             desc: s.description,
-            tooltipTemplate: s.tooltip, // 공식 계수 템플릿
+            tooltipTemplate: s.tooltip,
             iconUrl: `https://ddragon.leagueoflegends.com/cdn/${CURRENT_LOL_VERSION}/img/spell/${s.image.full}`,
             cooldown: cdArr,
             cost: s.costBurn || '소모값 없음'
@@ -1791,9 +1669,6 @@
       }
     }
 
-    // =======================================
-    // Shift 기반 정밀 인게임 수치 툴팁 로직
-    // =======================================
     const tooltip = document.getElementById('lolTooltip');
     const tooltipTitle = document.getElementById('tooltipTitle');
     const tooltipDesc = document.getElementById('tooltipDesc');
@@ -1865,7 +1740,6 @@
         const champData = await champRes.json();
         ALL_RUNES_DATA = await runeRes.json();
 
-        // 마법 계열 난입 -> 폭풍전사 보정
         ALL_RUNES_DATA.forEach(style => {
           if (style.id === 8200) {
             style.slots.forEach(slot => {
